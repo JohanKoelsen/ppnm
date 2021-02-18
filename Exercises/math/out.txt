@@ -1,0 +1,18 @@
+-------------
+Gamma(5) found value: 3.17805
+Gamma(5) real value: 3.17
+-------------
+J1(0.5) found value: 0.242268
+J1(0.5) real value: 0.5
+-------------
+sqrt(-2) found value: 0+i1.41421
+sqrt(-2) real value: 0+i1.44
+-------------
+exp(i*pi) found value: -1+i6.5359e-07
+exp(i*pi) real value: -1+i0
+-------------
+exp(i) found value: 0.540302+i0.841471
+exp(i) real value: -1+i0
+-------------
+(null) float: 0.111111
+(null) double: 0.111111

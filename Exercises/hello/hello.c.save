@@ -1,4 +1,4 @@
-//hello.c
+ //hello.c
 
 int main() {
 	printf("hello world\n");

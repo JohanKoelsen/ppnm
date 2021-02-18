@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+#include <tgmath.h>
+#include <complex.h>
+
+/* 
+TØ uge 2. Beregne bessel og gamma, samt undersøge matematiske funktioner
+*/
+
+
+#define M_E 2.7182818284 /* e */
+#define M_pi 3.141592 /* pi */
+
+
+v
+oid world(void){
+	printf("Gamma(5): %f\n",gamma(5));
+	printf("J1(0.5): %f\n",j1(0.5));
+}
+
+void mathfunc(void){
+	printf("sqrt(-2): %f+i%f\n",crealf(csqrt(-2)),cimagf(csqrt(-2)));
+}
+
+int main(void){
+	world();
+	mathfunc();
+	return 0;
+}
+
+
