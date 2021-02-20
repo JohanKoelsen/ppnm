@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(void){
+int main(int argc,char** argv){
 
 	double x;
 	int items;
-	FILE* my_input_stream = fopen("inputtext.txt","r");
-	FILE* my_out_stream = fopen("my_out_stream.txt","w");
+	if(argc < 3){
+	printf("no argument, klaphat\n");
+	return 0;}
+
+	FILE* my_input_stream = fopen(argv[1],"r");
+	FILE* my_out_stream = fopen(argv[2],"w");
+
 	do  {
 		items = fscanf(my_input_stream, "%lg",&x);
 		if(items != EOF){
