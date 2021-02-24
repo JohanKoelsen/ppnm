@@ -6,15 +6,16 @@ CC = gcc
 default: out.txt
 	cat out.txt
 
-out.txt: gsl-integ
-	./gsl-integ > out.txt
+out.txt: main
+	./main > out.txt
 
-gsl-integ.o: gsl-integ.c
+main.o: main.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
-gsl-integ: gsl-integ.o
-	$(CC) $(LDFLAGS) gsl-integ.o -o gsl-integ $(LDLIBS)
+main: main.o
+	$(CC) $(LDFLAGS) main.o -o main $(LDLIBS)
 
 clean:
-	$(RM) *.o out* gsl-integ
+	$(RM) *.o out* mainy
+

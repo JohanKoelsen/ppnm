@@ -3,13 +3,20 @@
 #include <math.h>
 #include <gsl/gsl_integration.h>
 
-
+// Uses gsl-integ for computing the integral of ln(x)/sqrt(x) from x = 0 to x = 1.
 
 double f (double x, void * params) {
   double alpha = *(double *) params;
   double f = log(alpha*x) / sqrt(x);
   return f;
 }
+
+double err(double x, void* params){
+	double alpha = *(double *) params;
+	double erf = 2/sqrt(alpha*M_PI)* exp(-pow(x,2));
+	return erf;
+}
+
 
 int
 main (void)
@@ -22,6 +29,7 @@ main (void)
   double alpha = 1.0;
 
   gsl_function F;
+// f
   F.function = &f;
   F.params = &alpha;
 
@@ -36,5 +44,6 @@ main (void)
 
   gsl_integration_workspace_free (w);
 
-  return 0;
+
+ return 0;
 }
