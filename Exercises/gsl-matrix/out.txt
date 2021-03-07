@@ -1,0 +1,6 @@
+answer of equation - printing vector x in A*x = b:
+-1.137902, -2.833031, 0.851459, 
+found b by A*x
+6.230000, 5.370000, 2.290000, 
+printing values of b
+6.230000, 5.370000, 2.290000, 

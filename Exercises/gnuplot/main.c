@@ -1,11 +1,13 @@
-  
+
+
+
+
 #include<stdio.h>
 #include<math.h>
 #include<gsl/gsl_sf_erf.h>
 #include<gsl/gsl_sf_gamma.h>
+#include "my_h_file.h"
 
-double myerf(double);
-double mygam(double);
 
 int main() {
 	double xmin=0.1, xmax=3;

@@ -5,13 +5,13 @@ LDLIBS = $(shell gsl-config --libs)
 .PHONEY: default
 default: erf.pyxplot.png gam.pyxplot.png
 
-erf.pyxplot.png: data.txt Makefile tabulated.data.txt
+erf.pyxplot.png: data.txt tabulated.data.txt
 	echo '\
 	set terminal png;\
 	set output "$@";\
 	set tics out;\
-	set xlabel "x";\
-	set ylabel "y";\
+	set xlabel "johan";\
+	set ylabel "theo";\
 	set title "Error function";\
 	plot \
 	"$<" using 1:2 with line title "erf from math.h"\
@@ -20,7 +20,7 @@ erf.pyxplot.png: data.txt Makefile tabulated.data.txt
 	,"tabulated.data.txt" using 1:2 with points title "tabulated data"\
 	'| pyxplot
 
-gam.pyxplot.png: data.txt Makefile  gam-tabulated.data.txt
+gam.pyxplot.png: data.txt gam-tabulated.data.txt
 	echo '\
 	set terminal png;\
 	set output "$@";\
@@ -47,4 +47,4 @@ gam-tabulated.data.txt: main
 main: main.o myerf.o mygam.o
 .PHONEY: clean
 clean:
-	$(RM) *.o main*.png data.txt
+	$(RM) *.o main *.png data.txt
