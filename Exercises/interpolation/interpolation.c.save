@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+#include "my_h_file.h"
+
+
+
+
+
+
+
+
+
+int main(void){
+	double x = linterp(int 2, double 4,double 4,double z );
+	//printf("x = %d\n",x);
+	return 0;
+
+}
