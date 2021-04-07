@@ -1,8 +1,0 @@
-  
-set term png
-set width 8
-set xlabel "$Time\: in\: Days$"
-set ylabel "$\log (Per-cent\: Activity)$"
-set title "Ordinary Least-Squares"
-set output "plot.png"
-plot "linfit.txt" using 1:2 with yerrorbars title "Data with errors"\

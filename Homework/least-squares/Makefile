@@ -16,6 +16,9 @@ fit.png: exp_vals.txt linfit.txt
 	set title "exp values and fit of 224Ra decay";\
 	plot \
 	"exp_vals.txt" using 1:2 with points title "exp values"\
+	,"linfit.txt" using 1:2 with line title "linear fit"\
+	,"linfit.txt" using 1:3 with line title "upper uncertainties"\
+	,"linfit.txt" using 1:4 with line title "lower uncertainties"\
 	'| pyxplot
 
 out.txt: main
