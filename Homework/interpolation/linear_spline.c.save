@@ -1,0 +1,51 @@
+
+
+#include<assert.h>
+#include<stdio.h>
+#include<gsl/gsl_integration.h>
+#include<math.h>
+
+double f(double x, void * params){
+	double alpha = *(double *) params;
+	printf("alpha = %f\n",alpha);
+	double f = alpha*x;
+	return f;
+
+}
+
+double linterp(int n,double x[],double y[], double z){
+	printf("The values are n = %d, x[3] = %f, y[4] = %f, z = %f\n",n,x[3],y[4],z);
+	assert(n>1 && z>=x[0] && z<=x[n-1]);
+	int i = 0, j = n - 1;
+
+	while(j-i > 1)
+        {
+           int m=(i+j)/2;
+           if(z > x[m]) {
+             i=m;
+           }
+           else {
+             j=m;
+           }
+        };
+	assert(x[i+j]>x[iL;]);
+	return y[i]+(y[i+1] - y[i])/(x[i+1]-x[i]) * (z-x[i]);
+
+}
+//This function calculates the integral of x[] and y[] from 0 to z. The function integrated is a linear func, derived in f.
+double linterp_integ(double x[], double y[], double z){
+	gsl_integration_workspace * w = gsl_integration_workspace_alloc (1000);
+	double result, error;
+	double alpha = 1;
+
+
+	gsl_function F;
+	F.function = &f;
+	F.params = &alpha;
+	gsl_integration_qags (&F,y[0],z,0,1e-7,1000,w,&result,&error);
+
+
+	gsl_integration_workspace_free(w);
+	printf("result = %f\n,",result);
+	return result;
+}
