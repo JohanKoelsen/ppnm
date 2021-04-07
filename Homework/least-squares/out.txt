@@ -5,3 +5,4 @@ The coefficients of the linear fit is
 And the uncertainties of c
 0.029838       0.003536       
 The half life of 224Ra is found to be tau = 4.04452
+The uncertainty of the half life is found by error-propagation law to be 0.0834378

@@ -84,6 +84,14 @@ int main(){
 		fprintf(exp_vals,"%g %g %g\n",gsl_vector_get(t,i),gsl_vector_get(logy,i), gsl_vector_get(dlogy,i));
 
 	}
+
+
+	//Finding uncertainty of the lifetime.
+	double err_half_life = log(2)/(c1*c1)*dc1;
+	printf("The uncertainty of the half life is found by error-propagation law to be %g\n",err_half_life);
+
+
+
 	//Clearing vars and closing files
 	fclose(linfit);
 	fclose(exp_vals);

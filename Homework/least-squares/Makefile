@@ -5,7 +5,7 @@ LDLIBS = $(shell gsl-config --libs)
 .PHONEY: default
 
 default: out.txt fit.png
-
+	cat out.txt
 fit.png: exp_vals.txt linfit.txt
 	echo '\
 	set terminal png;\
