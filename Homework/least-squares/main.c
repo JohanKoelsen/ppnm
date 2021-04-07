@@ -81,7 +81,7 @@ int main(){
 		ts = ts + step_size;
 	}
 	for(int i = 0; i < 9; i++){
-		fprintf(exp_vals,"%g %g\n",gsl_vector_get(t,i),gsl_vector_get(logy,i));
+		fprintf(exp_vals,"%g %g %g\n",gsl_vector_get(t,i),gsl_vector_get(logy,i), gsl_vector_get(dlogy,i));
 
 	}
 	//Clearing vars and closing files
