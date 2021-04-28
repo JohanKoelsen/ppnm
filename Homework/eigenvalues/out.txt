@@ -1,0 +1,110 @@
+The matrix A:
+8.40  1.98  4.77  9.16  0.16  
+1.98  3.35  6.29  6.36  2.43  
+4.77  6.29  3.65  7.17  1.37  
+9.16  6.36  7.17  1.42  8.04  
+0.16  2.43  1.37  8.04  1.57  
+The eigenvalues of matrix A:
+-10.14  0.00  0.00  0.00  -0.00  
+0.00  -3.25  0.00  -0.00  0.00  
+0.00  0.00  2.25  0.00  -0.00  
+0.00  -0.00  0.00  5.43  -0.00  
+-0.00  0.00  -0.00  -0.00  24.10  
+Calculing VDV^T to check that this is equal to the original matrix, A.
+VDV^T is equal to the original matrix A:
+8.40  1.98  4.77  9.16  0.16  
+1.98  3.35  6.29  6.36  2.43  
+4.77  6.29  3.65  7.17  1.37  
+9.16  6.36  7.17  1.42  8.04  
+0.16  2.43  1.37  8.04  1.57  
+Question B
+
+The Hamiltonian Matrix
+882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  -0.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  -441.00  
+-0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -0.00  -441.00  882.00  
+The energies are the following
+n = 0, calculated eigenvalues = 9.85121, exact eigenvalues =  9.8696
+n = 1, calculated eigenvalues = 39.1848, exact eigenvalues =  39.4784
+n = 2, calculated eigenvalues = 87.3455, exact eigenvalues =  88.8264
+n = 3, calculated eigenvalues = 153.257, exact eigenvalues =  157.914
+n = 4, calculated eigenvalues = 235.448, exact eigenvalues =  246.74
+n = 5, calculated eigenvalues = 332.082, exact eigenvalues =  355.306
+At last we compare them to the analytical solution, which is sqrt(2/L) sin(m*pi*ksi)
+Analytical solution: 0.0459954, our eigenfunction: 0.0459954
+Analytical solution: 0.0909634, our eigenfunction: -0.0909634
+Analytical solution: 0.133899, our eigenfunction: 0.133899
+Analytical solution: 0.173844, our eigenfunction: -0.173844
+Analytical solution: 0.209906, our eigenfunction: 0.209906
+Analytical solution: 0.241278, our eigenfunction: -0.241278
+Analytical solution: 0.267261, our eigenfunction: 0.267261
+Analytical solution: 0.287274, our eigenfunction: -0.287274
+Analytical solution: 0.300869, our eigenfunction: 0.300869
+Analytical solution: 0.307744, our eigenfunction: -0.307744
+Analytical solution: 0.307744, our eigenfunction: 0.307744
+Analytical solution: 0.300869, our eigenfunction: -0.300869
+Analytical solution: 0.287274, our eigenfunction: 0.287274
+Analytical solution: 0.267261, our eigenfunction: -0.267261
+Analytical solution: 0.241278, our eigenfunction: 0.241278
+Analytical solution: 0.209906, our eigenfunction: -0.209906
+Analytical solution: 0.173844, our eigenfunction: 0.173844
+Analytical solution: 0.133899, our eigenfunction: -0.133899
+Analytical solution: 0.0909634, our eigenfunction: 0.0909634
+Analytical solution: 0.0459954, our eigenfunction: -0.0459954
+Analytical solution: 0.0909634, our eigenfunction: -0.0909634
+Analytical solution: 0.173844, our eigenfunction: 0.173844
+Analytical solution: 0.241278, our eigenfunction: -0.241278
+Analytical solution: 0.287274, our eigenfunction: 0.287274
+Analytical solution: 0.307744, our eigenfunction: -0.307744
+Analytical solution: 0.300869, our eigenfunction: 0.300869
+Analytical solution: 0.267261, our eigenfunction: -0.267261
+Analytical solution: 0.209906, our eigenfunction: 0.209906
+Analytical solution: 0.133899, our eigenfunction: -0.133899
+Analytical solution: 0.0459954, our eigenfunction: 0.0459954
+Analytical solution: -0.0459954, our eigenfunction: 0.0459954
+Analytical solution: -0.133899, our eigenfunction: -0.133899
+Analytical solution: -0.209906, our eigenfunction: 0.209906
+Analytical solution: -0.267261, our eigenfunction: -0.267261
+Analytical solution: -0.300869, our eigenfunction: 0.300869
+Analytical solution: -0.307744, our eigenfunction: -0.307744
+Analytical solution: -0.287274, our eigenfunction: 0.287274
+Analytical solution: -0.241278, our eigenfunction: -0.241278
+Analytical solution: -0.173844, our eigenfunction: 0.173844
+Analytical solution: -0.0909634, our eigenfunction: -0.0909634
+Analytical solution: 0.133899, our eigenfunction: 0.133899
+Analytical solution: 0.241278, our eigenfunction: -0.241278
+Analytical solution: 0.300869, our eigenfunction: 0.300869
+Analytical solution: 0.300869, our eigenfunction: -0.300869
+Analytical solution: 0.241278, our eigenfunction: 0.241278
+Analytical solution: 0.133899, our eigenfunction: -0.133899
+Analytical solution: 3.77934e-17, our eigenfunction: -1.31061e-09
+Analytical solution: -0.133899, our eigenfunction: 0.133899
+Analytical solution: -0.241278, our eigenfunction: -0.241278
+Analytical solution: -0.300869, our eigenfunction: 0.300869
+Analytical solution: -0.300869, our eigenfunction: -0.300869
+Analytical solution: -0.241278, our eigenfunction: 0.241278
+Analytical solution: -0.133899, our eigenfunction: -0.133899
+Analytical solution: -7.55868e-17, our eigenfunction: 6.23235e-10
+Analytical solution: 0.133899, our eigenfunction: 0.133899
+Analytical solution: 0.241278, our eigenfunction: -0.241278
+Analytical solution: 0.300869, our eigenfunction: 0.300869
+Analytical solution: 0.300869, our eigenfunction: -0.300869
+Analytical solution: 0.241278, our eigenfunction: 0.241278
+Analytical solution: 0.133899, our eigenfunction: -0.133899

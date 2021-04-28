@@ -56,6 +56,11 @@ int main(){
 	check_ans("found b by A*x",A,x);
 	vec_print("printing values of b",b);
 
+
+
+
+
+
 gsl_matrix_free(A);
 gsl_matrix_free(Acopy);
 gsl_vector_free(b);

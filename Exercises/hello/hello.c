@@ -1,4 +1,7 @@
 //hello.c
+#include <gsl/gsl_vector.h>
+#include <gsl/gsl_blas.h>
+#include <math.h>
 
 char hello[] = "file scope";
 
@@ -16,5 +19,8 @@ void bar(void){
 int main() {
 	printf("hello world\n");
 	bar();
+
+
+
 	return 0;
 }
