@@ -11,8 +11,8 @@ out.txt: main
 main.o: main.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-main: main.o roots.o gs.o rkstep.o newton.o
-main.c: roots.c newton.c
+main: main.o roots.o gs.o rkstep.o
+main.c: roots.c
 roots.c: gs.c rkstep.c
 clean:
 	$(RM) *.o out* main
