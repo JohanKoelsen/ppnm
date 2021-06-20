@@ -69,7 +69,7 @@ int main(){
 	newton(Rosenbrock_grad, r, eps_root);
 	printf("The extremums of the valley is at: %g and %g.\n",gsl_vector_get(r,0),gsl_vector_get(r,1));
 
-	/*
+
 
 	//------Part B-------
 	gsl_vector* x = gsl_vector_alloc(1); //1d
@@ -77,7 +77,7 @@ int main(){
 	newton(SE_solved, x, eps_root);
 	printf("Part B: solving and finding extremum of SE\n");
 	printf("The extremum is %g.\n", gsl_vector_get(r,0));
-	*/
+	
 	//Cleaning
 	gsl_vector_free(r);
 	return 0;

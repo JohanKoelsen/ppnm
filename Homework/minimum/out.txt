@@ -1,0 +1,6 @@
+Rosenbrock minimum found in 53 steps.
+Rosenbrock init guess: (-2 ,8)
+Rosenbrock found val: (0.99999,0.999981)
+Himmelblau min found in 9 steps.
+Himmelblau init guess: (4,2)
+Himmelblau found val: (3,2)
