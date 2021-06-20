@@ -33,20 +33,23 @@ double BW(double Energy, gsl_vector* p){
 }
 
 // Deviation function (B)
-int ndata;
-gsl_vector* E;
+
+int ndata = 30;
+gsl_vector* energy;
 gsl_vector* sigma;
 gsl_vector* dsigma;
 
 double D(gsl_vector* p){
-	double sum =0;
+	double sum = 0;
+
 	for(int i=0; i<ndata; i++){
-	double Ei = gsl_vector_get(E,i);
-	double sigmai = gsl_vector_get(sigma, i);
-	double dsigmai = gsl_vector_get(dsigma,i);
-	double val = gsl_vector_get(p,2)/((Ei - gsl_vector_get(p,0))*(Ei-gsl_vector_get(p,0)) + dsigmai*dsigmai);
-	double Di = (val-sigmai)*(val-sigmai)/dsigmai/dsigmai;
-	sum += Di;
+		double Ei = gsl_vector_get(energy,i);
+		double sigmai = gsl_vector_get(sigma, i);
+		double dsigmai = gsl_vector_get(dsigma,i);
+
+		double val = gsl_vector_get(p,2)/((Ei - gsl_vector_get(p,0))*(Ei-gsl_vector_get(p,0)) + dsigmai*dsigmai);
+		double Di = (val-sigmai)*(val-sigmai)/dsigmai/dsigmai;
+		sum += Di;
 	}
 	return sum;
 }
@@ -86,8 +89,6 @@ int main(){
 	gsl_vector_free(y0);
 	gsl_vector_free(y);
 
-
-
 	//------Part B-------
 	int ndata = 30;
 	int N = 3;
@@ -102,9 +103,9 @@ int main(){
 	gsl_vector* param0 = gsl_vector_alloc(N);
 	gsl_vector* param = gsl_vector_alloc(N);
 
-	gsl_vector* energy = gsl_vector_alloc(ndata);
-	gsl_vector* sigma = gsl_vector_alloc(ndata);
-	gsl_vector* dsigma = gsl_vector_alloc(ndata);
+	energy = gsl_vector_alloc(ndata);
+	sigma = gsl_vector_alloc(ndata);
+	dsigma = gsl_vector_alloc(ndata);
 
 	//Defining init values
 	gsl_vector_set(param0,0,125);
@@ -120,19 +121,11 @@ int main(){
 
 	acc = 1e-5;
 
-	//Test world
-	/*
-	printf("%d\n",ndata);
-	printf("%g\n",D(param));
-	//----------
-	*/
-	
-	/*
 	steps = qnewton(D,param,acc);
 	printf("solutions to B - init values: (%g,%g,%g)\n",gsl_vector_get(param0,0),gsl_vector_get(param0,1),gsl_vector_get(param0,2));
 	printf("solution to B - minima found: (%g,%g,%g)\n",gsl_vector_get(param,0),gsl_vector_get(param,1),gsl_vector_get(param,2));
 	printf("solution found in %d steps.\n",steps);
-	*/
+
 	//Cleaning
 	gsl_vector_free(energy);
 	gsl_vector_free(sigma);

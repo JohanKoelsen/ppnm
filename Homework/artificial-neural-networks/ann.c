@@ -74,11 +74,18 @@ int qnewton(double F(gsl_vector* x), gsl_vector* x, double acc); // minimization
 static int N;
 gsl_vector* X;
 gsl_vector* Y;
-static ann* NETWORK;
+
+
+static ann* network_p;
+
+
 double cost_func(gsl_vector* p){
+	printf("size of p: %d\n",p -> size);
+	printf("N: %d\n",N);
+
 	//int d = p -> size;
 	//assert(d==3*NETWORK->n);
-	gsl_vector_memcpy(NETWORK->params,p);
+	gsl_vector_memcpy(network_p -> params, p);
 	//for(int i = 0; i < d; i++)NETWORK -> gsl_vector_set(params,i,gsl_vector_get(p,i));
 
 	double sum = 0;
@@ -86,8 +93,7 @@ double cost_func(gsl_vector* p){
 		double xk = gsl_vector_get(X,k);
 		double yk = gsl_vector_get(Y,k);
 
-
-		double fk = ann_response(NETWORK, xk);
+		double fk = ann_response(network_p, xk);
 		sum += (fk - yk)*(fk - yk);
 	}
 
@@ -95,20 +101,56 @@ double cost_func(gsl_vector* p){
 
 }
 void ann_train(ann* network, int nx, gsl_vector* xs, gsl_vector* ys){
+	network_p = network;
+	X = gsl_vector_alloc(xs -> size);
+	Y = gsl_vector_alloc(ys -> size);
 	gsl_vector* p = gsl_vector_alloc(network->params -> size);
+	printf("%ld, %ld, %ld, %ld, %ld\n",X->size, Y->size, xs->size, ys->size,p->size);
 	N = nx;
+	// X = xs, Y = ys
 	for (int i = 0; i < xs -> size; i++){
 		gsl_vector_set(X, i, gsl_vector_get(xs,i));
 		gsl_vector_set(Y,i,gsl_vector_get(ys,i));
 	}
-
 	//int d = 3*network -> n;
 	double acc = 1e-3;
 	gsl_vector_memcpy(p,network->params);
-
+	for (int i = 0;i < p->size;i++){
+		printf("%g\n",gsl_vector_get(p,i));
+	}
 	qnewton(cost_func, p, acc);
 	gsl_vector_memcpy(network->params,p);
 
 	gsl_vector_free(p);
 }
+
+
+
+
+
+/*
+void ann_train(ann* network,gsl_vector* xs,gsl_vector* ys){
+
+	double cost_function(gsl_vector* p){
+		gsl_vector_memcpy(network->params,p);
+		double sum=0;
+		for(int i=0;i<xs->size;i++){
+			double xi=gsl_vector_get(xs,i);
+			double yi=gsl_vector_get(ys,i);
+			double fi=ann_response(network,xi);
+			sum+=fabs(fi-yi);
+		}
+		return sum/xs->size;
+	}
+
+	gsl_vector* p=gsl_vector_alloc(network->params->size);
+	gsl_vector_memcpy(p,network->params);
+	qnewton(cost_function,p,1e-3);
+	gsl_vector_memcpy(network->params,p);
+	gsl_vector_free(p);
+
+}
+*/
+
+
 

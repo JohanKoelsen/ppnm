@@ -1,0 +1,387 @@
+20, 20, 20, 20, 9
+0
+1
+1
+1
+1
+1
+2
+1
+1
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+size of p: 9
+N: 20
+i=0, ai, bi, wi = -0.285835 0.956472 1.33206
+i=1, ai, bi, wi = 0.84778 1.11742 0.846373
+i=2, ai, bi, wi = 2.43668 1.01914 0.514057

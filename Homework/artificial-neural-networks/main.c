@@ -73,13 +73,13 @@ int main(){
 	}
 
 	ann_train(network, nx, xs, ys);
+
 	for(int i = 0; i<network->n; i++){
 		double ai = gsl_vector_get(network->params,3*i);
 		double bi = gsl_vector_get(network->params,3*i+1);
 		double wi = gsl_vector_get(network->params,3*i+2);
 		printf("i=%i, ai, bi, wi = %g %g %g\n", i, ai, bi, wi);
 	}
-
 
 	FILE* points =fopen("points.txt", "w");
 	for(int i=0; i<nx;i++) fprintf(points, "%g %g %g %g\n", gsl_vector_get(xs,i), gsl_vector_get(ys,i), gsl_vector_get(yms,i), gsl_vector_get(Ys,i));
@@ -99,5 +99,6 @@ int main(){
 	gsl_vector_free(ys);
 	gsl_vector_free(yms);
 	gsl_vector_free(Ys);
+
 	return 0;
 }
