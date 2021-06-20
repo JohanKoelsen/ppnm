@@ -4,7 +4,6 @@
 #include<stdlib.h>
 #include<gsl/gsl_vector.h>
 
-
 typedef struct {
 	int n;
 	double(*f)(double);
@@ -19,11 +18,9 @@ ann* ann_alloc(int n, double(*f)(double), double(*fm)(double), double(*F)(double
 	network -> f = f;
 	network -> fm = fm;
 	network -> F=F;
-	network -> params = malloc(3*n*sizeof(double)); // three parameters (a,b,w) for each neuron
+	network -> params = gsl_vector_alloc(3*n); // three parameters (a,b,w) for each neuron
 	return network;
 }
-
-
 
 //free allocated memory
 void ann_free(ann* network){
@@ -77,9 +74,8 @@ int qnewton(double F(gsl_vector* x), gsl_vector* x, double acc); // minimization
 static int N;
 gsl_vector* X;
 gsl_vector* Y;
-
 static ann* NETWORK;
-double cost_function(gsl_vector* p){
+double cost_func(gsl_vector* p){
 	//int d = p -> size;
 	//assert(d==3*NETWORK->n);
 	gsl_vector_memcpy(NETWORK->params,p);
@@ -99,17 +95,20 @@ double cost_function(gsl_vector* p){
 
 }
 void ann_train(ann* network, int nx, gsl_vector* xs, gsl_vector* ys){
-	gsl_vector* p = gsl_vector_alloc(network->params->size);
-
-	N = nx; X = xs; Y = ys;
+	gsl_vector* p = gsl_vector_alloc(network->params -> size);
+	N = nx;
+	for (int i = 0; i < xs -> size; i++){
+		gsl_vector_set(X, i, gsl_vector_get(xs,i));
+		gsl_vector_set(Y,i,gsl_vector_get(ys,i));
+	}
 
 	//int d = 3*network -> n;
 	double acc = 1e-3;
 	gsl_vector_memcpy(p,network->params);
 
-	qnewton(cost_function, p, acc);
-
+	qnewton(cost_func, p, acc);
 	gsl_vector_memcpy(network->params,p);
 
 	gsl_vector_free(p);
 }
+
