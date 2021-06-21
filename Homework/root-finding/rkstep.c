@@ -64,14 +64,14 @@ void driver(void f(double t, gsl_vector* b, gsl_vector* dydt), double a, gsl_vec
 	//yh is the value each step and dy is the error for each step
 	gsl_vector* yh 	= gsl_vector_alloc(n);
 	gsl_vector* dy = gsl_vector_alloc(n);
-
+	/*
 	printf("%g ", x);
 	for(int i = 0; i < n; i++){
 		printf("%g ", gsl_vector_get(ya, i));
 	}
 
 	printf("\n");
-
+	*/
 	while(x < b) {
 		if(x + h > b) h = b-x;
 		rkstep12(f, x, ya, h, yh, dy);
@@ -82,11 +82,14 @@ void driver(void f(double t, gsl_vector* b, gsl_vector* dydt), double a, gsl_vec
 		if(e < tau) {
 			x += h;
 			gsl_vector_memcpy(ya,yh);
+			/*
+
 			printf("%f ", x); // Print to the path log
 			for(int i=0; i<n; i++) {
 				printf("%f" , gsl_vector_get(ya, i));
 			}
 			printf("\n");
+			*/
 		}
 		else if(e > 0) h *= pow(tau/e,0.25) * 0.95;
 		else h *= 2;

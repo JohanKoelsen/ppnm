@@ -59,7 +59,7 @@ void SE_solved(gsl_vector* x, gsl_vector* M){
 
 int main(){
 	//------Part A---------
-	printf("Part A: finding extremum of Rosenbrock valley\n");
+	printf("Part A: finding extremum of Rosenbrock valley\n\n");
 	double eps_root = 0.01;
 	gsl_vector* r = gsl_vector_alloc(2); //2d
 	double x0 = -2;
@@ -75,9 +75,9 @@ int main(){
 	gsl_vector* x = gsl_vector_alloc(1); //1d
 	gsl_vector_set(x,0,x0);
 	newton(SE_solved, x, eps_root);
-	printf("Part B: solving and finding extremum of SE\n");
+	printf("Part B: solving and finding extremum of SE\n by solving the radial S.E equation.");
 	printf("The extremum is %g.\n", gsl_vector_get(r,0));
-	
+
 	//Cleaning
 	gsl_vector_free(r);
 	return 0;

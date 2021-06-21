@@ -80,9 +80,10 @@ static ann* network_p;
 
 
 double cost_func(gsl_vector* p){
+	/*
 	printf("size of p: %d\n",p -> size);
 	printf("N: %d\n",N);
-
+	*/
 	//int d = p -> size;
 	//assert(d==3*NETWORK->n);
 	gsl_vector_memcpy(network_p -> params, p);
@@ -105,7 +106,7 @@ void ann_train(ann* network, int nx, gsl_vector* xs, gsl_vector* ys){
 	X = gsl_vector_alloc(xs -> size);
 	Y = gsl_vector_alloc(ys -> size);
 	gsl_vector* p = gsl_vector_alloc(network->params -> size);
-	printf("%ld, %ld, %ld, %ld, %ld\n",X->size, Y->size, xs->size, ys->size,p->size);
+	//printf("%ld, %ld, %ld, %ld, %ld\n",X->size, Y->size, xs->size, ys->size,p->size);
 	N = nx;
 	// X = xs, Y = ys
 	for (int i = 0; i < xs -> size; i++){
@@ -115,9 +116,9 @@ void ann_train(ann* network, int nx, gsl_vector* xs, gsl_vector* ys){
 	//int d = 3*network -> n;
 	double acc = 1e-3;
 	gsl_vector_memcpy(p,network->params);
-	for (int i = 0;i < p->size;i++){
+	/*for (int i = 0;i < p->size;i++){
 		printf("%g\n",gsl_vector_get(p,i));
-	}
+	}*/
 	qnewton(cost_func, p, acc);
 	gsl_vector_memcpy(network->params,p);
 

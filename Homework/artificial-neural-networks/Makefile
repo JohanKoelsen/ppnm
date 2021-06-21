@@ -4,8 +4,12 @@ LDLIBS = $(shell gsl-config --libs)
 
 .PHONEY: default
 
-default: out.txt
+default: out.txt plot.png
 	cat out.txt
+
+plot.png: plots.pgi points.txt functions.txt
+	pyxplot $<
+
 
 out.txt: main
 	./main > out.txt
@@ -16,7 +20,6 @@ main.o: main.c
 main: main.o ann.o qnewton.o
 main.c: ann.c
 ann.c: qnewton.c
-
 
 .PHONEY: clean
 

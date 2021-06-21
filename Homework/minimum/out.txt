@@ -1,9 +1,17 @@
+Minimum part A: finding the minimum of Rosenbrock and Himmelblau functions:
+
+Rosenbrock function:
 Rosenbrock minimum found in 53 steps.
 Rosenbrock init guess: (-2 ,8)
 Rosenbrock found val: (0.99999,0.999981)
+
+The Himmelblau:
 Himmelblau min found in 9 steps.
 Himmelblau init guess: (4,2)
 Himmelblau found val: (3,2)
-solutions to B - init values: (125,0.5,7)
-solution to B - minima found: (125.935,0.5,15.9778)
+
+
+Part B: The tabulated data are scanned and evaluated.
+Initial values: (125,0.5,7)
+Minima found: (125.935,0.5,15.9778)
 solution found in 10 steps.

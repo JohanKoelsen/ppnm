@@ -49,7 +49,7 @@ double func_integ(double x, double x0){
 }
 
 int main(){
-	int nx = 20;
+	int nx = 40;
 	gsl_vector* xs = gsl_vector_alloc(nx);
 	gsl_vector* ys = gsl_vector_alloc(nx);
 	gsl_vector* yms = gsl_vector_alloc(nx);
@@ -73,14 +73,15 @@ int main(){
 	}
 
 	ann_train(network, nx, xs, ys);
-
+	printf("ANN part A, plotting the parameters for the activation function, the derivative and the antiderivative (ai, bi, wi) for the %d neurons.\n",n);
+	printf("The activation function is x*exp(-x^2)\n\n");
 	for(int i = 0; i<network->n; i++){
 		double ai = gsl_vector_get(network->params,3*i);
 		double bi = gsl_vector_get(network->params,3*i+1);
 		double wi = gsl_vector_get(network->params,3*i+2);
 		printf("i=%i, ai, bi, wi = %g %g %g\n", i, ai, bi, wi);
 	}
-
+	printf("\n\nFor part B, the values for the function sin(x)*exp(-x) (with its derivative and antiderivative) and the approximated points are shown in plot.png\n");
 	FILE* points =fopen("points.txt", "w");
 	for(int i=0; i<nx;i++) fprintf(points, "%g %g %g %g\n", gsl_vector_get(xs,i), gsl_vector_get(ys,i), gsl_vector_get(yms,i), gsl_vector_get(Ys,i));
 

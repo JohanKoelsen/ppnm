@@ -70,6 +70,8 @@ int main(){
 	double acc = 1e-4;
 	gsl_vector_memcpy(x,x0);
 	int steps = qnewton(Rosenbrock, x, acc);
+	printf("Minimum part A: finding the minimum of Rosenbrock and Himmelblau functions:\n\n");
+	printf("Rosenbrock function:\n");
 	printf("Rosenbrock minimum found in %d steps.\n",steps);
 	printf("Rosenbrock init guess: (%g ,%g)\n", gsl_vector_get(x0,0),gsl_vector_get(x0,1) );
 	printf("Rosenbrock found val: (%g,%g)\n", gsl_vector_get(x,0), gsl_vector_get(x,1) );
@@ -79,6 +81,7 @@ int main(){
 	gsl_vector_set(y0,1,2);
 	gsl_vector_memcpy(y,y0);
 	steps = qnewton(Himmelblau,y,acc);
+	printf("\nThe Himmelblau:\n");
 	printf("Himmelblau min found in %d steps.\n",steps);
 	printf("Himmelblau init guess: (%g,%g)\n",gsl_vector_get(y0,0),gsl_vector_get(y0,1));
 	printf("Himmelblau found val: (%g,%g)\n",gsl_vector_get(y,0),gsl_vector_get(y,1));
@@ -120,10 +123,10 @@ int main(){
 	gsl_matrix_get_col(dsigma,data,2);
 
 	acc = 1e-5;
-
+	printf("\n\nPart B: The tabulated data are scanned and evaluated.\n");
 	steps = qnewton(D,param,acc);
-	printf("solutions to B - init values: (%g,%g,%g)\n",gsl_vector_get(param0,0),gsl_vector_get(param0,1),gsl_vector_get(param0,2));
-	printf("solution to B - minima found: (%g,%g,%g)\n",gsl_vector_get(param,0),gsl_vector_get(param,1),gsl_vector_get(param,2));
+	printf("Initial values: (%g,%g,%g)\n",gsl_vector_get(param0,0),gsl_vector_get(param0,1),gsl_vector_get(param0,2));
+	printf("Minima found: (%g,%g,%g)\n",gsl_vector_get(param,0),gsl_vector_get(param,1),gsl_vector_get(param,2));
 	printf("solution found in %d steps.\n",steps);
 
 	//Cleaning
