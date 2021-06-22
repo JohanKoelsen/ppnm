@@ -2,11 +2,14 @@
 CFLAGS += $(shell gsl-config --cflags)
 LDLIBS = $(shell gsl-config --libs)
 
-default: out.txt Hydrogen.png
-	#cat out.txt
-
+default: out.txt hydrogen.png
+	cat out.txt
 out.txt: main
-	./main #> out.txt
+	./main > out.txt
+
+hydrogen.png: hydrogen.pgi hydrogen.txt
+	pyxplot $<
+
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c $< -o $@

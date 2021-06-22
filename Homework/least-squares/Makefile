@@ -6,20 +6,9 @@ LDLIBS = $(shell gsl-config --libs)
 
 default: out.txt fit.png
 	cat out.txt
-fit.png: exp_vals.txt linfit.txt
-	echo '\
-	set terminal png;\
-	set output "$@";\
-	set tics out;\
-	set xlabel "time";\
-	set ylabel "activity";\
-	set title "exp values and fit of 224Ra decay";\
-	plot \
-	"exp_vals.txt" using 1:2:3 with yerrorbars title "exp values with errors"\
-	,"linfit.txt" using 1:2 with line linetype 1 color black title "linear fit"\
-	,"linfit.txt" using 1:3 with line linetype 2 color red title "upper uncertainties"\
-	,"linfit.txt" using 1:4 with line linetype 2 color red title "lower uncertainties"\
-	'| pyxplot
+
+fit.png: fit.pgi exp_vals.txt linfit.txt
+	pyxplot $<
 
 out.txt: main
 	./main > out.txt

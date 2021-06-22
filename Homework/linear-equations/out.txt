@@ -1,3 +1,5 @@
+Part A: We are checking that the QR-decomposition is working properly.
+
 Matrix A before QR-decomposition
 0.680375	-0.211234	0.566198	
 0.596880	0.823295	-0.604897	
@@ -32,6 +34,14 @@ Checking that Q*R*x. It should be equal to b.
 0.832390       -0.514226       -0.782382       -0.407937       0.542715       
 vector b is:
 0.832390       -0.514226       -0.782382       -0.407937       0.542715       
+
+Part B: checking that the Gram-Schmidt QR factorization is working.
+Generated matrix, A:
+-0.295083	0.615449	0.838053	-0.860489	0.898654	
+0.051991	-0.827888	-0.615572	0.326454	0.780465	
+-0.302214	-0.871657	-0.959954	-0.084597	-0.873808	
+-0.523440	0.941268	0.804416	0.701840	-0.466669	
+0.079521	-0.249586	0.520497	0.025071	0.335448	
 
 Checking that the matrices, BA = B*A = A*B = AB = I
 A*B =

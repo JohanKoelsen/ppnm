@@ -4,8 +4,11 @@ CFLAGS += $(shell gsl-config --cflags)
 LDLIBS = -lm
 LDLIBS += $(shell gsl-config --libs)
 
-default: out.txt
+default: out.txt error.png
 	cat out.txt
+
+error.png: error.pgi error.txt
+	pyxplot $<
 
 out.txt: main
 	./main > out.txt

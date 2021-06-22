@@ -1,20 +1,29 @@
+Part A: recursive adaptive integration. In this part the code integrate two expressions, f = sqrt(x) and f = 4*(1-x^2) over some intervals.
+
 f = sqrt(x) from 0 to 1
 Q = 0.666722
 exact = 0.666667
 calls = 24
 estimated error = 0.000166672
 actual error = 5.55411e-05
-f = 4(1-x^2) from 0 to 1
+
+f = 4*sqrt(1-x^2) from 0 to 1
 Q = 3.14163
 exact = 3.14159
 calls = 48
 estimated error = 0.000414163
 actual error = 3.46698e-05
------------------------------
 
-F from 0 to 1 : CLENSHAW_CURTIS
-Q = 0.666663
-exact = 2
-calls = 32
-estimated error = 0.000166666
-actual error = 1.33334
+Part B: an  adaptive integrator with the Clenshaw–Curtis variable transformation is implemented, tested and specifically calculating the
+integral of f(x) = 4*srqt(1-x^2) from 0 to 1
+
+f from 0 to 1 : CLENSHAW_CURTIS
+Q = 3.14159
+exact = 3.14159
+calls = 56
+estimated error = 0.000414159
+actual error = 2.23694e-06
+By comparing with the previous integration from part A, we can see that the result is more correct, however the number of calls and the error is larger.
+
+The GSL's integration routines provide = 3.141593 with 231 number of calls. The error is 0.00015548.
+While providing the correct result, the number of calls is larger.

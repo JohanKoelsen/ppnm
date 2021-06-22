@@ -1,0 +1,2 @@
+program name is ./cmdline
+there were no arguments

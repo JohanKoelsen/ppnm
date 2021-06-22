@@ -1,0 +1,4 @@
+Part A: interpolates the list shown below, and calculates the the linear spline
+The values are n = 7, x[3] = 7.000000, y[4] = 8.000000, z = 6.000000
+a.1 test = 6.333333
+a.2 test = 14.333333

@@ -1,3 +1,15 @@
-result = 1.39298 +/- 0.00373311*i 
+Part A: calculating the numerical result of the function given on the homepage along with its analytical result:
+
+numerical result = 1.39298 +/- 0.00373311*i 
 analytical result = 1.3932 
-result from 1/sqrt(x) from 0 to pi = 3.5418 +/- 0*i
+
+Testing additional functions: 1/sqrt(x) and 1/exp(1-x)
+
+result from 1/sqrt(x) from 0 to pi = 3.5418 +/- 0.00193999*i
+results frrom 1/exp(1-x) from 0 to pi = 8.14236 +/- 0.00217365*i
+
+Part B: testing MC integrator with quasi-random sequences. In this we will test the same functions that we used in part A.
+Solution to the integral provided the the exercise description (with error) = 1.38122 +/- 0.000423865*i
+Solution to 1/sqrt(x) from 0 to pi: 3.54259 +/- 8.99029e-05*i
+Solution to 1/exp(1-x) from 0 to pi: 8.14498 +/- 2.19036e-05*i
+The scaling of the errors for the plain monte-carlo vs the quasi-random monte-carlo as a function of N are shown in error.png

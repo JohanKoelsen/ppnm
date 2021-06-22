@@ -1,0 +1,11 @@
+
+set term png
+set width 8
+set xlabel "$Time\: in\: Days$"
+set ylabel "$\log (Per-cent\: Activity)$"
+set title "Ordinary Least-Squares"
+set output "fit.png"
+plot "exp_vals.txt" using 1:2:3 with yerrorbars title "Data with errors"\
+, "linfit.txt" using 1:2 with line linetype 1 color black title "Lin fit"\
+, "linfit.txt" using 1:3 with line linetype 2 color red title "Lower bound"\
+, "linfit.txt" using 1:4 with line linetype 2 color red title "Upper bound"

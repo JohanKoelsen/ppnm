@@ -9,7 +9,7 @@
 
 
 int main(void){
-
+	printf("Part A: interpolates the list shown below, and calculates the the linear spline\n");
 	int n = 7;
 	double x_list[7] = {1,3,4,7,10,12,16};
 	double y_list[7] = {2,3,5,7,8,11,12};
@@ -19,13 +19,5 @@ int main(void){
 	printf("a.2 test = %f\n",linterp_integ(x_list,y_list,5));
 
 
-
-	// gsl_interp_linear
-	gsl_interp * A = gsl_interp_alloc(gsl_interp_linear, 4000);
-	double t;
-	t = gsl_interp_init(gsl_interp * A, x_list, y_list, 4000);
-
-
-	gsl_interp_free(A);
 	return 0;
 }

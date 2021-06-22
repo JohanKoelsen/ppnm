@@ -25,6 +25,7 @@ int main(void){
 			gsl_matrix_set(A, i, j, randomBetweenPlusMinus1());
 		}
 	}
+	printf("Part A: We are checking that the QR-decomposition is working properly.\n\n");
 	printf("Matrix A before QR-decomposition\n");
 	printMatrix(A);
 	gsl_matrix* R = gsl_matrix_alloc(m, m);
@@ -84,6 +85,7 @@ int main(void){
 	/*
 	Part B
 	*/
+	printf("\nPart B: checking that the Gram-Schmidt QR factorization is working.\n");
 	//Creating a square n x n matrix, A, with random inputs.
 	gsl_matrix* A3 = gsl_matrix_alloc(n,n);
 	gsl_matrix* R3 = gsl_matrix_alloc(n,n);
@@ -92,6 +94,8 @@ int main(void){
 			gsl_matrix_set(A3,i,j,randomBetweenPlusMinus1());
 		}
 	}
+	printf("Generated matrix, A:\n");
+	printMatrix(A3);
 	GS_decomp(A3,R3);
 	gsl_matrix* B3 = gsl_matrix_alloc(n,n);
 	GS_inverse(A3,R3,B3);

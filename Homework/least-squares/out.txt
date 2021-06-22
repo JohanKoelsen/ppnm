@@ -1,3 +1,5 @@
+Part A: we fit the data with an exponential function in the usual logarithmic way.
+The data points are inserted:
 1.000000       2.000000       3.000000       4.000000       6.000000       9.000000       10.000000       13.000000       15.000000       
 117.000000       100.000000       88.000000       72.000000       53.000000       29.500000       25.200000       15.200000       11.100000       
 The coefficients of the linear fit is
@@ -6,3 +8,4 @@ And the uncertainties of c
 0.029838       0.003536       
 The half life of 224Ra is found to be tau = 4.04452
 The uncertainty of the half life is found by error-propagation law to be 0.0834378
+The solution is shown in fit.png with uncertainties of the fitting coefficients (Part B) included aswell.

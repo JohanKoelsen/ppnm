@@ -18,7 +18,7 @@ void printVector(gsl_vector* v);
 int main(){
 	//Task A) We fit the data ith exponential function in the usual logarithmic way.
 	//We define vector t and y from the data given in the exercise.
-
+	printf("Part A: we fit the data with an exponential function in the usual logarithmic way.\n");
 	int N = 9; //size of data set
 	gsl_vector* t = gsl_vector_alloc(N);
 	gsl_vector* y = gsl_vector_alloc(N);
@@ -31,7 +31,7 @@ int main(){
 		gsl_vector_set(t,k,time[k]);
 		gsl_vector_set(y,k,activity[k]);
 	}
-
+	printf("The data points are inserted:\n");
 	printVector(t);
 	printVector(y);
 	//Since we fit with exponential function in the logarithmic way of ln(y) = ln(a) - lambda, we make the vector logy and dlogy.
@@ -77,11 +77,11 @@ int main(){
 	double ts = 0;
 	double step_size = 0.10;
 	while(ts <= max){
-		fprintf(linfit,"%g %g %g %g\n",ts, c0 + c1*ts, (c0 - dc0) + (c1 - dc1)*ts, (c0 + dc0) + (c1 + dc1)*ts);
+		fprintf(linfit,"%20g %20g %20g %20g\n",ts, c0 + c1*ts, (c0 - dc0) + (c1 - dc1)*ts, (c0 + dc0) + (c1 + dc1)*ts);
 		ts = ts + step_size;
 	}
 	for(int i = 0; i < 9; i++){
-		fprintf(exp_vals,"%g %g %g\n",gsl_vector_get(t,i),gsl_vector_get(logy,i), gsl_vector_get(dlogy,i));
+		fprintf(exp_vals,"%20g %20g %20g\n",gsl_vector_get(t,i),gsl_vector_get(logy,i), gsl_vector_get(dlogy,i));
 
 	}
 
@@ -90,7 +90,7 @@ int main(){
 	double err_half_life = log(2)/(c1*c1)*dc1;
 	printf("The uncertainty of the half life is found by error-propagation law to be %g\n",err_half_life);
 
-
+	printf("The solution is shown in fit.png with uncertainties of the fitting coefficients (Part B) included aswell.\n");
 
 	//Clearing vars and closing files
 	fclose(linfit);
