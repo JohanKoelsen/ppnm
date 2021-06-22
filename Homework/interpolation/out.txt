@@ -1,4 +1,13 @@
-Part A: interpolates the list shown below, and calculates the the linear spline
-The values are n = 7, x[3] = 7.000000, y[4] = 8.000000, z = 6.000000
-a.1 test = 6.333333
-a.2 test = 14.333333
+Part A: First we test the linear interpolation function at value z.\ With the x and y list:
+x: 0 1 2 3 4 5 6 
+y: 1 4.3 9.6 16.9 26.2 37.5 50.8 
+Now we test our linear interpolator and integrator vs GSL.
+The interpolated value at z = 3.5 is 21.55.
+We now calculate the integral of the linear spline of the tabulated data from the point x[0] = 0 to the point z = 3.5.
+The value is 32.4625.
+
+The GSL interpolation  at z = 3.5 yield 21.3048.
+The integrated value from GSL from x[0] = 0 to z = 3.5 yield 31.9282.
+The comparison between the interpolations and integrations are shown in the linplot.png and integplot.png.
+
+Binsearch at z = 5.21 yields 3.

@@ -1,0 +1,11 @@
+  
+set term png
+set width 8
+set xlabel "$x$"
+set ylabel "$y$"
+set title "Quadratic interpolation"
+set output "qsplineplot.png"
+plot "functions.txt" using 1:2 with points pointtype 2 title "Tabulated data" \
+, "qspline.txt" using 1:2 with line title "qspline interpolation" \
+, "qspline.txt" using 1:3 with line title "qspline derivative" \
+, "qspline.txt" using 1:4 with line title "qspline integral function" 

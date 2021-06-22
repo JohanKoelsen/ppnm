@@ -1,0 +1,10 @@
+
+set term png
+set width 8
+set xlabel "$x$"
+set ylabel "$y$"
+set title "Linear interpolation"
+set output "linplot.png"
+plot "functions.txt" using 1:2 with points pointtype 2 title "Tabulated function" \
+, "points.txt" using 1:2 with line linetype 1 color black title "my linear interpolation" \
+, "points.txt" using 1:3 with line linetype 3 color yellow title "GSL" \
