@@ -1,5 +1,12 @@
 #include <math.h>
 #include <gsl/gsl_vector.h>
+#define FMT "%9.3f %9.3f "
+#define TIME 6
+#define M1 1.0
+#define M2 1.0
+#define M3 1.0
+#define GRAVITY 1
+
 
 //Defining functions
 double norm(gsl_vector* v);
@@ -7,7 +14,7 @@ double norm(gsl_vector* v);
 void driver(void f(double t, gsl_vector* b, gsl_vector* dydt), double a, gsl_vector* ya, double b, gsl_vector* yb, double h, double acc, double eps, char* path);
 
 void rkstep12(void f(double t, gsl_vector* y, gsl_vector* dydt), double t, gsl_vector* yt, double h, gsl_vector* yh, gsl_vector* err);
-
+void f(double t, gsl_vector* u, gsl_vector* dudt);
 
 //Defining the differential equation
 void fun(double t, gsl_vector* y, gsl_vector* dydt){
@@ -94,10 +101,27 @@ int main() {
 	printf("We can see that increasing T_C decreases the maximum amount of infected as well as shifting the solution to the left.\n");
 	printf("The solutions are plotted in sir1.png, sir2.png and sir3.png.\n");
 	printf("\nPart B: {ti, y(ti)} is stored in the given path in the driver function\n");
+
+	//Part C --- Gravity
+	printf("\nPart C: stable 3-body orbit.\n");
+	gsl_vector* grava = gsl_vector_alloc(12);
+	gsl_vector* gravb = gsl_vector_alloc(12);
+
+	//defining grava painfully maniually to get all digits
+	gsl_vector_set(grava,0,-0.97000436); gsl_vector_set(grava,1, 0.24308753);gsl_vector_set(grava,2,0);gsl_vector_set(grava,3,0);gsl_vector_set(grava,4,0.97000436);
+	gsl_vector_set(grava,5,-0.24308753); gsl_vector_set(grava,6,0.4662036850);gsl_vector_set(grava,7,0.4323657300);gsl_vector_set(grava,8,-0.93240737);
+	gsl_vector_set(grava,9,-0.86473146); gsl_vector_set(grava,10,0.4662036850); gsl_vector_set(grava,11,0.4323657300);
+
+	path = "threebody.txt";
+	a = 0; b = TIME;
+
+	driver(f, a, grava, b, gravb, h, acc, eps, path);
 	//Cleaning
 	gsl_vector_free(y);
 	gsl_vector_free(res);
 	gsl_vector_free(ya);
 	gsl_vector_free(yb);
+	gsl_vector_free(grava);
+	gsl_vector_free(gravb);
 return 0;
 }

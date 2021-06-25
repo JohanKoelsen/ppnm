@@ -5,3 +5,5 @@ We can see that increasing T_C decreases the maximum amount of infected as well 
 The solutions are plotted in sir1.png, sir2.png and sir3.png.
 
 Part B: {ti, y(ti)} is stored in the given path in the driver function
+
+Part C: stable 3-body orbit.

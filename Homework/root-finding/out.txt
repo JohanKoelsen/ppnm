@@ -1,5 +1,0 @@
-Part A: finding extremum of Rosenbrock valley
-
-The extremums of the valley is at: 0.999999 and 0.999998.
-Part B: solving and finding extremum of SE by solving the radial S.E equation.
-The extremum is 0.999999.

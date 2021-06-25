@@ -2,6 +2,10 @@
 #include <assert.h>
 #include <stdio.h>
 
+
+
+#define SQR2 1.41421356237309504880
+
 double recursive_integrate(double f(double),double a, double b,double acc, double eps, double f2, double f3, int limit){
 	double f1 = f(a+(b-a)/6);
 	double f4 = f(a+5*(b-a)/6);
@@ -83,4 +87,37 @@ double clenshaw_curtis_nested( double f(double),double a,double b,double acc,dou
 
 	return integrate(g,0,M_PI,2*acc,2*eps);
 }
+
+
+
+//Part C ---- infitnite boundaries
+static double A; // the left integration limit
+
+static double F_c(double f(double),double t){// variable transformation formula
+	return f( A+(1-t)/t )/t/t;
+	}
+
+
+double wrap24( double f(double),double a, double b, double acc, double eps, double f2, double f3, int nrec){
+	assert(nrec<99);
+	double f1 = F_c(f,a+(b-a)/6), f4 = F_c(f,a+5*(b-a)/6);
+	double Q = (2*f1 + f2 + f3 + 2*f4)/6*(b-a), q = (f1 + f4 + f2 + f3)/4*(b-a);
+	double tolerance = acc + eps*fabs(Q), error = fabs(Q-q);
+	if(error < tolerance) return Q;
+	else {
+		double Q1 = wrap24(f, a, (a+b)/2, acc/SQR2, eps, f1, f2, nrec + 1);
+		double Q2 = wrap24(f, (a+b)/2, b, acc/SQR2, eps, f3, f4, nrec + 1);
+		return Q1+Q2; }
+}
+//New func with infinite boundaries
+double integrate_infinite(double f(double),double a,double acc,double eps ){
+	A = a;
+	a = 0;
+	double b = 1;
+	double f2 = F_c(f,a+2*(b-a)/6);
+	double f3 = F_c(f,a+4*(b-a)/6);
+	int nrec = 0;
+	return wrap24(f,a,b,2*acc,2*eps,f2,f3,nrec);
+}
+
 

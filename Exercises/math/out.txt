@@ -14,5 +14,8 @@ exp(i*pi) real value: -1+i0
 exp(i) found value: 0.540302+i0.841471
 exp(i) real value: -1+i0
 -------------
-(null) float: 0.111111
-(null) double: 0.111111
+i^e found value: -0.42822+i-0.903675
+i^e real value: -0.428219+i0
+-------------
+i^i found value: 0.20788+i0
+i^i real value: 0.2078+i0

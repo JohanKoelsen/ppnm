@@ -8,7 +8,7 @@ double recursive_integrate(double f(double), double a, double b, double acc, dou
 double integrate(double f(double), double a, double b, double acc, double eps);
 double clenshaw_curtis(double f(double), double a, double b, double acc, double eps);
 double CC24(double f(double), double a, double b, double acc, double eps, double f2, double f3, int nrec);
-
+double integrate_infinite(double f(double), double a, double acc, double eps);
 
 
 int calls;
@@ -25,8 +25,12 @@ double g2(double x){
 double g2_GSL(double x, void* params){
 	calls++;
 	double alpha = *(double*) params;
-	return alpha*4*sqrt(1-x*x);}
+	return alpha * 4*sqrt(1-x*x);}
 
+double f1(double x){
+	calls++;
+	return exp(-x);
+}
 int main(){
 	//Interval from [0,1] with acc = 0.001 and eps = 0.001.
 	double a = 0;
@@ -90,6 +94,18 @@ int main(){
 
 	gsl_integration_workspace_free(w);
 
+	//----C----
+	printf("\nPart C: testing infinite integrals on converging integrals.\n");
+	acc=0.0001;
+	eps=0.0001;
+	a = 0;
+	calls = 0;
+	double Q = integrate_infinite(f1,a,acc,eps);
+	exact = exp(-a);
+	printf("We test on exp(-x), from %g to inf\n",a);
+	printf("The result is %g with the exact value being %g.\n",Q,exact);
+	printf("Number of calls = %d\n",calls);
+	printf("Estimated error = %g with actual error = %g.\n", acc + fabs(Q) * eps, fabs(Q-exact));
 
 	return 0 ;
 }

@@ -1,8 +1,8 @@
-CFLAGS = -Wall -O -std=gnu11
+CC = gcc
+CFLAGS =-std=gnu99 -O -Wall
 CFLAGS += $(shell gsl-config --cflags)
-LDLIBS = $(shell gsl-config --libs)
-
-.PHONEY: default
+LDLIBS = -lm
+LDLIBS += $(shell gsl-config --libs)
 
 default: out.txt
 	cat out.txt
@@ -12,12 +12,10 @@ out.txt: main
 
 main.o: main.c
 	$(CC) $(CFLAGS) -c $< -o $@
+SVD.o: SVD.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-main: main.o qnewton.o downhill.o
-main.c: qnewton.c
-downhill.o: downhill.c
-
-.PHONEY: clean
+main: main.o SVD.o
 
 
 clean:

@@ -26,14 +26,6 @@ void printcomplex(char funName[], double complex fun, double complex realVal){
 }
 
 
-void floatnumbers(){
-	printDash();
-	printf("%s float: %f\n",1./9);
-	printf("%s double: %f\n",1./9);
-
-}
-
-
 
 int main(void){
 	print("Gamma(5)",gamma(5),3.17);
@@ -41,7 +33,8 @@ int main(void){
 	printcomplex("sqrt(-2)",csqrt(-2),1.44*I);
 	printcomplex("exp(i*pi)",cexp(I*M_pi),-1);
 	printcomplex("exp(i)",cexp(I),-1);
-	floatnumbers();
+	printcomplex("i^e",pow(I,M_E),-0.428219);
+	printcomplex("i^i",pow(I,I),0.2078);
 	return 0;
 }
 

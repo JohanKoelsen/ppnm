@@ -8,7 +8,7 @@
 //Defining functions in main
 void gradient(double F(gsl_vector*), gsl_vector* x, gsl_vector* grad);
 int qnewton(double F(gsl_vector*), gsl_vector* x, double acc);
-
+int downhill_simplex(double F(gsl_vector*), gsl_matrix* simplex, int d, double simplex_size_goal);
 
 //Rosenbrock function
 double Rosenbrock(gsl_vector* r){
@@ -129,7 +129,27 @@ int main(){
 	printf("Minima found: (%g,%g,%g)\n",gsl_vector_get(param,0),gsl_vector_get(param,1),gsl_vector_get(param,2));
 	printf("solution found in %d steps.\n",steps);
 
+
+	//----Part C----
+	printf("Part C: Incorrect implementation of the downhill method.\n");
+#if 0
+	int d = 2;
+	gsl_matrix* simplex = gsl_matrix_alloc(2,3);
+	gsl_matrix_set(simplex,0,0,1);gsl_matrix_set(simplex,0,1,2);gsl_matrix_set(simplex,0,2,0);gsl_matrix_set(simplex,1,0,2);
+	gsl_matrix_set(simplex,1,1,8);gsl_matrix_set(simplex,1,2,0);
+	int lo =0 ;
+	double size_goal = 1e-4;
+	int stepsc = downhill_simplex(Rosenbrock, simplex, d, size_goal);
+
+	/*
+	printf("Part C: implementation of downhill simplex.\nHere we use Rosenbrock's valley functions.\n");
+	printf("Simplex size goal = %g\n",size_goal);
+	printf("Found minimum at (%g, %g)\n",gsl_matrix_get(simplex,lo,0), gsl_matrix_get(simplex,lo,1));
+	printf("In %d steps.\n",stepsc);
+	*/
 	//Cleaning
+
+#endif
 	gsl_vector_free(energy);
 	gsl_vector_free(sigma);
 	gsl_vector_free(dsigma);

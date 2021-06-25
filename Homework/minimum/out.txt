@@ -15,3 +15,4 @@ Part B: The tabulated data are scanned and evaluated.
 Initial values: (125,0.5,7)
 Minima found: (125.935,0.5,15.9778)
 solution found in 10 steps.
+Part C: Incorrect implementation of the downhill method.

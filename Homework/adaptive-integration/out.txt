@@ -27,3 +27,9 @@ By comparing with the previous integration from part A, we can see that the resu
 
 The GSL's integration routines provide = 3.141593 with 231 number of calls. The error is 0.00015548.
 While providing the correct result, the number of calls is larger.
+
+Part C: testing infinite integrals on converging integrals.
+We test on exp(-x), from 0 to inf
+The result is 1.00001 with the exact value being 1.
+Number of calls = 52
+Estimated error = 0.000200001 with actual error = 8.16678e-06.

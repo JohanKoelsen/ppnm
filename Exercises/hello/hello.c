@@ -1,24 +1,14 @@
-//hello.c
-#include <gsl/gsl_vector.h>
-#include <gsl/gsl_blas.h>
+#include <stdio.h>
 #include <math.h>
 
-char hello[] = "file scope";
-
-void bar(void){
-	char hello[] = "function scope";
-	printf("hello (function scope?):%s\n",hello);
-	{
-		char hello[] = "block scope";
-		printf("hello (block scope?):%s\n",hello);
-	}
+void hello(){
+	double r = sqrt(2.0);
+	printf("hello, sqrt(2)=%g\n",r);
 }
-	
-
 
 int main() {
 	printf("hello world\n");
-	bar();
+	hello();
 
 
 

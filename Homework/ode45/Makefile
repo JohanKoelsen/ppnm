@@ -6,8 +6,11 @@ LDLIBS += $(shell gsl-config --libs)
 
 .PHONEY: default
 
-default: out.txt harmonics.png sir1.png sir2.png sir3.png
+default: out.txt harmonics.png sir1.png sir2.png sir3.png threebody.png
 	cat out.txt
+
+threebody.png: threebody.pgi threebody.txt
+	pyxplot $<
 
 harmonics.png: harmonics.pgi harmonics.txt
 	pyxplot $<
@@ -24,11 +27,12 @@ sir3.png: sir3.pgi SIR3.txt
 out.txt: main
 	./main > out.txt
 
-main: main.o rkstep.o
+main: main.o rkstep.o gravity.o
 
 rkstep.o: rkstep.c
 	$(CC) $(CFLAGS) -c -o $@ $<
-
+gravity.o: gravity.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 
 .PHONEY:clean
