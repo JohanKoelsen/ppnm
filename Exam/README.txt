@@ -13,7 +13,7 @@ SVD.c	makes the one-sided Jacobi SVD algorithm.
 In this exercise the one-sided Jacobi algorithm is used on a real, square matrix, A, which decomposes A into A-> UDV^T (with V^T being the transposed of matrix V).
 Matrix D is diagonal with non-negative elements, and matrices U and V are orthogonal.
 
-The method uses a cyclic sweep-method until the iterations have converged when the diagonal elements are invariant under further rotations.
+The method uses a cyclic sweep-method until the iterations have converged when the diagonal elements does not change under further rotations.
 Then U, D, and V can be computed:
 V = R, Dii=||a'i|| and ui=a'i/||a'i||.
 

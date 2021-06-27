@@ -1,0 +1,32 @@
+My max integer for INT_MAX is 2147483647.
+My max integer for for loop is 2147483647.
+My max integer for while loop is 2147483647.
+My max integer for do while loop is 2147483647.
+My min integer for INT_MIN is 2147483647.
+My min integer for for loop is -2147483648.
+My min integer for while loop is -2147483648.
+My min integer for do while loop is -2147483648.
+----------
+sum_up_float is 15.403683
+sum_down_float is 18.807919
+----------
+sum_up_double is 20.9662
+sum_down_double if 20.9662
+----------
+float x for while loop is 0.000000
+double x for while loop is 2.22045e-16
+long double x for while loop is 1.0842e-19
+float e for for loop is 0.000000
+double e for for loop is 2.22045e-16
+long double e for for loop is 1.0842e-19
+----------
+float check 0.000000
+double check 2.22045e-16
+long double check 1.0842e-19
+----------
+float y for do while is 0.000000
+double y for do while is 2.22045e-16
+long double y for do while is 1.0842e-19
+--------------------------
+a = 1, b = 2, tau = 1, epsilon = 1/4 results in 0
+a = 2,b = 1, tau = 2, epsilon = 3 results in 1
